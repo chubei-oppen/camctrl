@@ -195,7 +195,7 @@ impl CameraControl {
     /// * `step` - Number of steps to zoom. Negative value makes the camera go forward, positive backward.
     ///
     /// Returns the new camera pose.
-    pub fn zoom(&mut self, pose: Rbt, step: f32) -> Rbt {
+    pub fn zoom(&mut self, pose: &Rbt, step: f32) -> Rbt {
         self.state = State::Immediate;
         let move_length = if step > 0.0 {
             self.focus_distance * step * BACKWARD_SPEED
